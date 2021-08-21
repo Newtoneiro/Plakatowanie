@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -15,15 +14,15 @@ private:
 	int height;
 public:
 	Building(int h = 0)
-		:height(h){};
+		:height(h) {};
 
 	Building(const Building& b)    // copy constr,
 		:height(b.height) {}
-	
+
 	int get_height() const { return height; }
 
 	void decreaseHeight(int n) { height -= n; }
-	
+
 	~Building() = default;
 };
 
@@ -38,7 +37,7 @@ public:
 		std::cin >> *this;
 	}
 
-	Street(std::istream & is)
+	Street(std::istream& is)
 	{
 		is >> *this;
 	}
@@ -69,12 +68,21 @@ public:
 			{
 				Reader >> _ >> height;
 				buildings.push_back(Building(height));
-			}		
+			}
 		}
-		catch (std::runtime_error &e)
+		catch (std::runtime_error& e)
 		{
 			std::cerr << e.what();
 			buildings.clear();
+		}
+	}
+
+	Street(const Street& s)  // copy constr
+	{
+		buildings.clear();
+		for (Building b : s.buildings)
+		{
+			buildings.push_back(b);
 		}
 	}
 
@@ -85,7 +93,7 @@ public:
 		auto cur_low = buildings.begin();
 		for (auto i = buildings.begin(); i != buildings.end(); ++i)
 		{
-			if (i->get_height() < cur_low->get_height()) 
+			if (i->get_height() < cur_low->get_height())
 				cur_low = i;
 		}
 		return cur_low;
@@ -109,7 +117,7 @@ public:
 					output.push_back(curRow);
 					curRow.clear();
 				}
-			}	
+			}
 		}
 		output.push_back(curRow);
 		return output;
@@ -150,3 +158,12 @@ int countPosters(Street s)
 	else
 		return 0;
 }
+
+//int main()
+//{
+//	std::ios_base::sync_with_stdio(false);
+//	std::cin.tie(0);
+//	Street s;
+//	std::cout << countPosters(s);
+//	return 0;
+//}

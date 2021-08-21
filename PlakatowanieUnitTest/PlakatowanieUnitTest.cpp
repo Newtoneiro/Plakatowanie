@@ -62,7 +62,34 @@ namespace PlakatowanieUnitTest
 			
 			s.decreaseHeights(16);
 
+			i = s.getLowestBuilding();
+			Assert::IsTrue(0 == i->get_height());
+			Assert::IsTrue(7 == s.Buildings().size());
 		}
 
+		TEST_METHOD(testStreetCopy)
+		{
+			vector<int> h{ 16, 189, 16, 82, 31, 64, 75 };
+			Street s(7, h);
+			Street s2(s);
+			auto i = s2.getLowestBuilding();
+			Assert::IsTrue(16 == i->get_height());
+			Assert::IsTrue(7 == s2.Buildings().size());
+		}
+
+		TEST_METHOD(testCountPosters1)
+		{
+			vector<int> h{ 16, 189, 16, 82, 31, 64, 75 };
+			Street s(7, h);
+			Assert::IsTrue(6 == countPosters(s));
+		}
+
+		TEST_METHOD(testCountPosters2)
+		{
+			vector<int> h{2, 2, 2, 2, 2};
+			Street s(5, h);
+			int a = countPosters(s);
+			Assert::AreEqual(a, 1);
+		}
 	};
 }
