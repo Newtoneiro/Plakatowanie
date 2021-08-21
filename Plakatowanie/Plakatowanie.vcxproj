@@ -92,6 +92,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>Stack Reserve Size=4194304</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -139,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PlakatowanieAlgorytm.cpp" />
+    <ClCompile Include="Plakatowanie_Algorytm.cpp" />
     <ClCompile Include="Plakatowanie_Podejście_Obiektowe.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -18,7 +18,7 @@
     <ClCompile Include="Plakatowanie_Podejście_Obiektowe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlakatowanieAlgorytm.cpp">
+    <ClCompile Include="Plakatowanie_Algorytm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
