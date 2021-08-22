@@ -159,11 +159,11 @@ int countPosters(Street s)
 		return 0;
 }
 
-//int main()
-//{
-//	std::ios_base::sync_with_stdio(false);
-//	std::cin.tie(0);
-//	Street s;
-//	std::cout << countPosters(s);
-//	return 0;
-//}
+int main()
+{
+	std::ios_base::sync_with_stdio(false);
+	std::cin.tie(0);
+	Street s;
+	std::cout << countPosters(s);
+	return 0;
+}
